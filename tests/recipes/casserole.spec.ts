@@ -10,20 +10,10 @@ test("casserole page header", async ({ page }) => {
   );
 });
 
-//test("picture guide loads", async ({ page }) => {
-//  const casserolePage = new CasserolePage(page);
-//  await expect(
-//    page.getByRole("heading", { name: "In Pictures: How to Make" })
-//  ).toBeVisible({ timeout: 15000 });
-//  await expect(
-//    page.getByRole("img", { name: "chunks of bread and potatoes" })
-//  ).toBeVisible({ timeout: 15000 });
-//});
-
 test("recipe card loads", async ({ page }) => {
   const casserolePage = new CasserolePage(page);
+  await casserolePage.goto()
   await expect(
-    page.locator('.tasty-recipes-entry-header')
+    page.getByText('Description', {exact: true })
   ).toBeVisible({ timeout: 15000 });
-  //  await page.getByRole("link", { name: "Cinnamon Rolls", exact: true }).click();
 });
