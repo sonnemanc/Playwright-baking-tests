@@ -20,28 +20,10 @@ test("casserole page header", async ({ page }) => {
 //  ).toBeVisible({ timeout: 15000 });
 //});
 
-test("suggestions load", async ({ page }) => {
+test("recipe card loads", async ({ page }) => {
   const casserolePage = new CasserolePage(page);
   await expect(
-    page.getByRole("heading", { name: "What to Serve With Breakfast" })
+    page.locator('.tasty-recipes-entry-header')
   ).toBeVisible({ timeout: 15000 });
   //  await page.getByRole("link", { name: "Cinnamon Rolls", exact: true }).click();
 });
-
-//test("recipe card loads", async ({ page }) => {
-//  const casserolePage = new CasserolePage(page);
-//  await expect(page.locator("#tasty-recipes-71415")).toBeVisible({
-//    timeout: 15000,
-//  });
-//});
-
-//test("recipe card print page link works", async ({ page }) => {
-//  const casserolePage = new CasserolePage(page);
-//  await expect(page.locator("#tasty-recipes-71415")).toBeVisible({
-//    timeout: 15000,
-//  });
-//  await expect(page.getByRole("link", { name: "Print Recipe" })).toBeVisible();
-//  const page1Promise = page.waitForEvent("popup");
-//  await page.getByRole("link", { name: "Print Recipe" }).click();
-//  const page1 = await page1Promise;
-//});
