@@ -7,7 +7,7 @@ export class SearchPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.searchInput = page.locator("#search-field");
+    this.searchInput = page.locator("#searchInput");
   }
 
   async goto() {

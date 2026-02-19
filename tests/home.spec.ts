@@ -7,9 +7,7 @@ test("home page header", async ({ page }) => {
   const menuRight = page.locator('.menu-right')
 
   await homePage.goto();
-await expect(
-  page.getByRole("link", { name: "Sally's Baking Home", exact: true })
-).toBeVisible();
+  await expect(page.getByRole("link", { name: "Sally's Baking Home", exact: true })).toBeVisible();
 
 // There ended up being three legit 'All Recipes' links
 // await expect(
